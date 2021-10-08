@@ -5,19 +5,24 @@ import os
 try: 
     if os.name == 'posix':
         os.system("clear")
+
     # instancia Endereco
     endereco1 = Endereco(rua='Coelho de Resende', numero='222', cep=Validador.valida_cep('64000-0000'), cidade='Teresina', estado='PI')
 
     # instancia Pessoa
-    pessoa1 = Pessoa(nome='Maria Joaquina de Amaral Pereira Goes', data_nascimento=Validador.valida_data('19/02/1980'), 
-    sexo='M', cpf='123456789-87', telefone=Validador.valida_telefone('(86)995555558'), email=Validador.valida_email('teste@ufpi.edu.br'))
+    pessoa1 = Pessoa(nome='Maria Joaquina de Amaral Pereira Goes', 
+    data_nascimento=Validador.valida_data('19/02/1980'), 
+    sexo='M', 
+    cpf='123456789-87', 
+    telefone=Validador.valida_telefone('(86)995555558'), 
+    email=Validador.valida_email('teste@ufpi.edu.br') )
 
-    # atribui enderedo1 a pessoa1
+    #atribui enderedo1 a pessoa1
     pessoa1.set_endereco(endereco1)
 
     print(f'Nome: {pessoa1.nome}, Data de Nascimento: {pessoa1.data_nascimento}, Sexo: {pessoa1.sexo}, cpf: {pessoa1.cpf}, idade: { pessoa1.get_idade_atual() }, endereco: {pessoa1.endereco}')
 
-    cliente1 = Cliente(pessoa1)
+    cliente1 = Cliente(pessoa1.nome, pessoa1.data_nascimento, pessoa1.sexo, pessoa1.cpf, pessoa1.telefone, pessoa1.endereco)
 
     cliente1.set_endereco(endereco1)
 
@@ -31,4 +36,3 @@ try:
 
 except Exception as e:
     print(f'Erro: {e}')
-

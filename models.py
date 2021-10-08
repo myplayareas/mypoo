@@ -32,7 +32,7 @@ class Pessoa:
         self.endereco = endereco
     
     def __str__(self):
-        return f'Nome: {self.nome}, CPF: {self.cpf}, Sexo: {self.sexo}, Telefone: {self.telefone}, Endereço: {self.endereco}'
+        return f'Nome: {self.nome}, Data de Nascimento: {self.data_nascimento}, Sexo: {self.sexo}, CPF: {self.cpf}, Telefone: {self.telefone}, Endereço: {self.endereco}'
 
 class Usuario:
     def __init__(self, user, password, acesso=None):
